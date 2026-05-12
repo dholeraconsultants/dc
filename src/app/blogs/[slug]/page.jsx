@@ -304,28 +304,28 @@ export default async function Post({ params }) {
     image: post.mainImage?.url,
     author: {
       "@type": "Organization",
-      name: "BookMyAssets",
+      name: "dholeraconsultants",
     },
-    editor: "BookMyAssets Editorial Team",
+    editor: "dholeraconsultants Editorial Team",
     genre: post.genre || "General",
     keywords: post.keywords?.join(", "),
     wordcount: post.wordCount?.toString() || "1000",
     publisher: {
       "@type": "Organization",
-      name: "BookMyAssets",
+      name: "dholeraconsultants",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.bookmyassets.com/assets/images/logo.png",
+        url: "https://www.dholeraconsultants.com/assets/images/logo.png",
       },
     },
-    url: `https://www.bookmyassets.com/dholera-sir/${post.slug.current}`,
-    mainEntityOfPage: `https://www.bookmyassets.com/dholera-sir/${post.slug.current}`,
+    url: `https://www.dholeraconsultants.com/dholera-sir/${post.slug.current}`,
+    mainEntityOfPage: `https://www.dholeraconsultants.com/dholera-sir/${post.slug.current}`,
     datePublished: post.publishedAt,
     dateModified: post._updatedAt || post.publishedAt,
     description: post.metaDescription,
   };
 
-  const canonicalUrl = `https://www.bookmyassets.com/dholera-sir/${post.slug.current}`;
+  const canonicalUrl = `https://www.dholeraconsultants.com/dholera-sir/${post.slug.current}`;
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -372,7 +372,7 @@ export default async function Post({ params }) {
               </h4>
               <div className="flex flex-wrap gap-2">
                 <a
-                  href="https://www.bookmyassets.com/blogs/why-invest-in-dholera-india-first-greenfield-smart-city"
+                  href="https://www.dholeraconsultants.com/blogs/why-invest-in-dholera-india-first-greenfield-smart-city"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
@@ -380,7 +380,7 @@ export default async function Post({ params }) {
                   Greenfield City Project
                 </a>
                 <a
-                  href="https://www.bookmyassets.com/blogs/how-tata-semiconductor-fab-dholera-impact-plot-prices"
+                  href="https://www.dholeraconsultants.com/blogs/how-tata-semiconductor-fab-dholera-impact-plot-prices"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
@@ -388,7 +388,7 @@ export default async function Post({ params }) {
                   TATA Semiconductor Fab Dholera
                 </a>
                 <a
-                  href="https://www.bookmyassets.com/blogs/dholera-solar-power-project"
+                  href="https://www.dholeraconsultants.com/blogs/dholera-solar-power-project"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
@@ -396,12 +396,12 @@ export default async function Post({ params }) {
                   Solar Power Plant
                 </a>
                 <a
-                  href="https://www.bookmyassets.com/projects/dholera/westwyn-county-wc"
+                  href="https://www.dholeraconsultants.com/projects/dholera/westwyn-county-wc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
                 >
-                  WestWyn County by BookMyAssets
+                  WestWyn County by dholeraconsultants
                 </a>
               </div>
             </div>
@@ -412,7 +412,7 @@ export default async function Post({ params }) {
                 Want to learn more?
               </h3>
               <p className="text-gray-600 mb-6">
-                Discover more investment opportunities with BookMyAssets™
+                Discover more investment opportunities with dholeraconsultants™
                 today.
               </p>
               <Link
