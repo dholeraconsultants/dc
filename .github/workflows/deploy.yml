@@ -30,10 +30,26 @@ jobs:
           NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
           GOOGLE_CLOUD_API_KEY: ${{ secrets.GOOGLE_CLOUD_API_KEY }}
           NEXT_PUBLIC_TELECRM_API_KEY: ${{ secrets.NEXT_PUBLIC_TELECRM_API_KEY }}
-          RECAPTCHA_PROJECT_ID: ${{ secrets.RECAPTCHA_PROJECT_ID}}
-          RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY}}
+          RECAPTCHA_PROJECT_ID: ${{ secrets.RECAPTCHA_PROJECT_ID }}
+          RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
 
-      - name: Deploy to server
+      - name: Archive build output
+        run: |
+          tar -czf app.tar.gz \
+          .next/standalone \
+          .next/static \
+          public
+
+      - name: Upload to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "app.tar.gz"
+          target: "/var/www/dc"
+
+      - name: Deploy on server via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOST }}
@@ -42,6 +58,8 @@ jobs:
           script: |
             cd /var/www/dc
 
-            git pull origin main
+            rm -rf .next
 
-            pm2 restart app || pm2 start npm --name "app" -- start
+            tar -xzf app.tar.gz
+
+            pm2 restart app || pm2 start node .next/standalone/server.js --name app
