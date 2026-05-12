@@ -32,6 +32,7 @@ jobs:
           NEXT_PUBLIC_TELECRM_API_KEY: ${{ secrets.NEXT_PUBLIC_TELECRM_API_KEY }}
           RECAPTCHA_PROJECT_ID: ${{ secrets.RECAPTCHA_PROJECT_ID }}
           RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
+          
 
       - name: Archive build output
         run: |
