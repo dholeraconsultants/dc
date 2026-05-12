@@ -18,8 +18,8 @@ const testimonials = [
     avatar: "/api/placeholder/80/80"
   },
   {
-    quote: "I trust Top Deals Dholera because they only deal in verified plots. WestWyn County in Dholera Smart City gave me both peace of mind and strong future returns",
-    name: "Sumit Patel",
+    quote: "I trust Dholera Consultants because they only deal in verified plots. WestWyn County in Dholera Smart City gave me both peace of mind and strong future returns",
+    name: "Naman Gupta",
     location: " Surat",
     avatar: "/api/placeholder/80/80"
   },
