@@ -39,8 +39,8 @@ jobs:
           tar -czf app.tar.gz \
           .next/standalone \
           .next/static \
-          public
-
+          public \
+          package.json
       - name: Upload to server
         uses: appleboy/scp-action@v0.1.7
         with:
