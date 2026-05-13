@@ -63,4 +63,5 @@ jobs:
 
             tar -xzf app.tar.gz
 
-            pm2 restart app || pm2 start node .next/standalone/server.js --name app
+            pm2 restart app || pm2 start .next/standalone/server.js --name app
+            pm2 save
